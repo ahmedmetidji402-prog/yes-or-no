@@ -1,124 +1,176 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Just One Question 💕</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<meta charset="UTF-8">
+<title>Nariman 💕</title>
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ffe4ec, #fce1ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    .container {
-      background: #ffffffcc;
-      backdrop-filter: blur(10px);
-      padding: 40px 50px;
-      border-radius: 25px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      position: relative;
-      width: 360px;
-    }
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffd6e8, #fbe7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-    h1 {
-      color: #ff6f91;
-      margin-bottom: 30px;
-      font-weight: 600;
-    }
+/* Hearts */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.8;
+}
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      position: relative;
-    }
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
 
-    button {
-      border: none;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.container {
+  background: #ffffffcc;
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+  width: 380px;
+  position: relative;
+  z-index: 10;
+}
 
-    #yesBtn {
-      background: #7ed957;
-      color: white;
-      box-shadow: 0 10px 20px rgba(126,217,87,0.4);
-    }
+h1 {
+  color: #ff5fa2;
+  margin-bottom: 20px;
+}
 
-    #yesBtn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 15px 25px rgba(126,217,87,0.6);
-    }
+.teddy {
+  font-size: 50px;
+  margin-bottom: 15px;
+  animation: bounce 2s infinite;
+}
 
-    #noBtn {
-      background: #ff5c5c;
-      color: white;
-      box-shadow: 0 10px 20px rgba(255,92,92,0.4);
-      position: relative;
-    }
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    .message {
-      margin-top: 30px;
-      font-size: 22px;
-      color: #ff6f91;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
 
-    .message.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+button {
+  border: none;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yesBtn {
+  background: #ff8fc7;
+  color: white;
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+}
+
+#noBtn {
+  background: #ff6b6b;
+  color: white;
+  position: relative;
+}
+
+.message {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #ff5fa2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Do you like me? 💕</h1>
+<div class="container">
+  <div class="teddy">🧸💖🧸</div>
 
-    <div class="buttons">
-      <button id="yesBtn">Yes 💖</button>
-      <button id="noBtn">No 💔</button>
-    </div>
+  <h1>
+    Nariman 💕<br>
+    I love you so much<br>
+    and I want to spend<br>
+    my whole life with you 💍
+  </h1>
 
-    <div class="message" id="message">
-      Yaaay ✨<br>
-      I knew it! 💗
-    </div>
+  <div class="buttons">
+    <button id="yesBtn">Yes 💗</button>
+    <button id="noBtn">No 💔</button>
   </div>
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const message = document.getElementById("message");
+  <div class="message" id="message">
+    Yaaay Nariman 🎀💖<br>
+    Forever together 🥰🧸
+  </div>
+</div>
 
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * 200 - 100;
-      const y = Math.random() * 150 - 75;
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const message = document.getElementById("message");
 
-      noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    });
+// No button moves
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 150 - 75;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
 
-    yesBtn.addEventListener("click", () => {
-      message.classList.add("show");
-      yesBtn.style.display = "none";
-      noBtn.style.display = "none";
-    });
-  </script>
+// Yes click
+yesBtn.addEventListener("click", () => {
+  message.classList.add("show");
+  yesBtn.style.display = "none";
+  noBtn.style.display = "none";
+});
+
+// Hearts
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 400);
+</script>
 
 </body>
 </html>
+
