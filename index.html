@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Just One Question 💕</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe4ec, #fce1ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      padding: 40px 50px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      position: relative;
+      width: 360px;
+    }
+
+    h1 {
+      color: #ff6f91;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      position: relative;
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #yesBtn {
+      background: #7ed957;
+      color: white;
+      box-shadow: 0 10px 20px rgba(126,217,87,0.4);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 25px rgba(126,217,87,0.6);
+    }
+
+    #noBtn {
+      background: #ff5c5c;
+      color: white;
+      box-shadow: 0 10px 20px rgba(255,92,92,0.4);
+      position: relative;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #ff6f91;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Do you like me? 💕</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 💖</button>
+      <button id="noBtn">No 💔</button>
+    </div>
+
+    <div class="message" id="message">
+      Yaaay ✨<br>
+      I knew it! 💗
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 150 - 75;
+
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      message.classList.add("show");
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
